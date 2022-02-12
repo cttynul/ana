@@ -29,8 +29,12 @@ def get_kb_from_cve(cve):
                                 #print(kb)
                             #version = (r.getElementsByTagName("vuln:ProductID")[0]).childNodes[0].data
                             version = (r.getElementsByTagName("vuln:ProductID")[0]).childNodes[0].data
-                            if(version.startswith("115")): version_effective = "Windows Server 2019"
+                            if(version.startswith("11")): version_effective = "Windows Server 2019"
+                            elif(version.startswith("109")): version_effective = "Windows Server 2016"
                             elif(version.startswith("108")): version_effective = "Windows Server 2016"
+                            elif(version.startswith("107")): version_effective = "Windows Server 2016"
+                            elif(version.startswith("106")): version_effective = "Windows Server 2016"
+                            elif(version.startswith("105")): version_effective = "Windows Server 2016"
                             elif(version.startswith("104")): version_effective = "Windows Server 2012 R2"
                             elif(version.startswith("103")): version_effective = "Windows Server 2012"
                             elif(version.startswith("100")): version_effective = "Windows Server 2008 R2"
