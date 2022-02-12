@@ -3,10 +3,14 @@
 
 import requests, xml.dom.minidom
 
-r = requests.get("https://access.redhat.com/hydra/rest/securitydata/cve/CVE-2021-29988.xml").text
-tree = xml.dom.minidom.parseString(r)
-collection = tree.documentElement
-affecteds = collection.getElementsByTagName("AffectedRelease")
-for a in affecteds:
-    t = a.getElementsByTagName("Advisory")[0]
-    print("RHSA That fix problem: %s" % t.childNodes[0].data)
+def get_rhsa_from_cve(cve):
+    r = requests.get("https://access.redhat.com/hydra/rest/securitydata/cve/" + cve + ".xml").text
+    tree = xml.dom.minidom.parseString(r)
+    collection = tree.documentElement
+    affecteds = collection.getElementsByTagName("AffectedRelease")
+    result = []
+    for a in affecteds:
+        rhsa = a.getElementsByTagName("Advisory")[0].childNodes[0].data
+        os = a.getElementsByTagName("ProductName")[0].childNodes[0].data
+        result.append({"CVE": cve, "Patch":rhsa, "OS": os})
+    return result
