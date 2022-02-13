@@ -15,17 +15,18 @@
 🐞 SecOps tool to map CVE with KB & CVE with RHSA
 
 ## Usage
-1. Install needed libraries
+1. Install needed **libraries**
 ```
 $ pip install -r requirements.txt
 ```
-2. Run ana
+2. If wanna run automagically, put input **XLSX** file in **ana root folder**, If need an input template you can check `./Input-CVE.xlsx`
+3. Run ana
 ```
 $ python ana.py [XLS_Input.xls]
-    If input file not provied will run wizard waiting for user input
+      If input file not provied will run wizard waiting for user input
 ```
-3. **Trust the process**
-4. Get output XLSX file generated in `./output/`
+4. **Trust the process**
+5. Get output XLSX file generated in `./output/`
 
 ## Example
 ```
@@ -76,10 +77,10 @@ $ python ./main.py Input-CVE.xlsx
 7  CVE-2021-42284  Windows Hyper-V Denial of Service Vulnerability  KB5007247  Windows Server 2012 R2
 8  CVE-2021-42284  Windows Hyper-V Denial of Service Vulnerability  KB5007255  Windows Server 2012 R2
 Windows 2012 R2 is not currently suppoted. Or report for CVE-2021-42284 may already been created
-              CVE                                              Title           Patch                          OS
-0  CVE-2019-14850  CVE-2019-14850 nbdkit: denial of service due t...  RHSA-2020:1167  Red Hat Enterprise Linux 7
-             CVE                                              Title           Patch                                        OS
-0  CVE-2020-3757  CVE-2020-3757 flash-plugin: Arbitrary Code Exe...  RHSA-2020:0513  Red Hat Enterprise Linux 6 Supplementary
+              CVE                                Title           Patch                          OS
+0  CVE-2019-14850  CVE-2019-14850 nbdkit: denial of...  RHSA-2020:1167  Red Hat Enterprise Linux 7
+             CVE                                 Title           Patch                          OS
+0  CVE-2020-3757  CVE-2020-3757 flash-plugin: Arbitr...  RHSA-2020:0513  Red Hat Enterprise Linux 6...
 ```
 
 ## License
