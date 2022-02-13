@@ -20,13 +20,13 @@
 $ pip install -r requirements.txt
 ```
 2. If wanna run automagically, put input **XLSX** file in **ana root folder**, If need an input template you can check `./Input-CVE.xlsx`
-3. Run ana
+3. Run **ana**
 ```
 $ python ana.py [XLS_Input.xls]
       If input file not provied will run wizard waiting for user input
 ```
 4. **Trust the process**
-5. Get output XLSX file generated in `./output/`
+5. Get **output XLSX** file generated in `./output/`
 
 ## Example
 ```
