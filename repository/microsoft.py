@@ -1,7 +1,8 @@
-# https://api.msrc.microsoft.com/cvrf/v2.0/Updates('CVE-2021-28311')
+# https://api.msrc.microsoft.com/cvrf/v2.0/Updates('CVE-2021-43217')
 # https://api.msrc.microsoft.com/cvrf/v2.0/cvrf/2021-May
 
 import requests, xml.dom.minidom
+#from support import humanize_ms
 
 product_ids = [{"id": "9312", "os": "Windows Server 2008 for 32-bit Systems Service Pack 2"},
                 {"id": "10049", "os": "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"},
@@ -53,13 +54,16 @@ def get_kb_from_cve(cve):
                                 #print(kb)
                             #version = (r.getElementsByTagName("vuln:ProductID")[0]).childNodes[0].data
                             version = (r.getElementsByTagName("vuln:ProductID")[0]).childNodes[0].data
-                            version_effective = False
+                            version_effective = version
+                            '''
                             for pids in product_ids:
                                 if version.startswith(pids["id"][:-3]):
                                     version_effective = pids["os"]
+                            '''
                             if(version_effective):
                                 if kb:
                                     el = {"CVE": cve, "Title": cve_title, "Patch": kb, "OS": version_effective}
                                     if el not in result: result.append(el)
                         else:pass
     return result
+    #return humanize_ms.humanize_values(result)

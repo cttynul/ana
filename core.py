@@ -53,7 +53,7 @@ def automagically(cve_input_xls):
             try: kb = get_kb_from_cve(cve=i["CVE"].strip())
             except: kb = ""
             if len(kb) != 0:
-                df_kb = pd.DataFrame(kb)
+                df_kb = pd.DataFrame(kb).drop_duplicates()
                 print(df_kb)
                 with pd.ExcelWriter("./output/" + i["CVE"] + "_KB_Report.xlsx") as writer:
                     df_kb.to_excel(writer, sheet_name=i["CVE"], index=False)
@@ -63,7 +63,7 @@ def automagically(cve_input_xls):
         elif "red" in i["OS"].lower() and pathlib.Path("./output/" + i["CVE"] + "_KB_Report.xlsx").exists() is False:
             rhsa = get_rhsa_from_cve(cve=i["CVE"])
             if len(rhsa) != 0:
-                df_rhsa = pd.DataFrame(rhsa)
+                df_rhsa = pd.DataFrame(rhsa).drop_duplicates()
                 print(df_rhsa)
                 with pd.ExcelWriter("./output/" + i["CVE"] + "_RHSA_Report.xlsx") as writer:
                     df_rhsa.to_excel(writer, sheet_name=i["CVE"], index=False)
