@@ -3,6 +3,30 @@
 
 import requests, xml.dom.minidom
 
+product_ids = [{"id": "9312", "os": "Windows Server 2008 for 32-bit Systems Service Pack 2"},
+                {"id": "10049", "os": "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"},
+                {"id": "10051", "os": "Windows Server 2008 R2 for x64-based Systems Service Pack 1"},
+                {"id": "10287", "os": "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)"},
+                {"id": "10378", "os": "Windows Server 2012"},
+                #{"id": "10379", "os": "Windows Server 2012 (Server Core installation)"},
+                {"id": "10483", "os": "Windows Server 2012 R2"},
+                #{"id": "10500", "os": "Windows Server 2012 R2 (Server Core installation)"}, #custom
+                #{"id": "10543", "os": "Windows Server 2012 R2 (Server Core installation)"},
+                {"id": "10816", "os": "Windows Server 2016"},
+                #{"id": "10700", "os": "Windows Server 2016"},#custom
+                #{"id": "10600", "os": "Windows Server 2016"},#custom
+                #{"id": "10855", "os": "Windows Server 2016 (Server Core installation)"},
+                {"id": "11571", "os": "Windows Server 2019"},
+                #{"id": "11600", "os": "Windows Server 2019"}, #custom
+                #{"id": "11700", "os": "Windows Server 2019"}, #custom
+                #{"id": "11572", "os": "Windows Server 2019 (Server Core installation)"},
+                {"id": "11803", "os": "Windows Server, version 20H2 (Server Core Installation)"},
+                {"id": "11923", "os": "Windows Server 2022"},
+                #{"id": "11924", "os": "Windows Server 2022 (Server Core installation)"},
+                {"id": "9312", "os": "Windows Server 2008 for 32-bit Systems Service Pack 2"},
+                {"id": "9318", "os": "Windows Server 2008 for x64-based Systems Service Pack 2"},
+                {"id": "9344", "os": "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"}]
+
 def get_kb_from_cve(cve):
     r = requests.get("https://api.msrc.microsoft.com/cvrf/v2.0/Updates('" + cve + "')").json()
     kb_desc = r["value"][0]["CvrfUrl"]
@@ -29,17 +53,10 @@ def get_kb_from_cve(cve):
                                 #print(kb)
                             #version = (r.getElementsByTagName("vuln:ProductID")[0]).childNodes[0].data
                             version = (r.getElementsByTagName("vuln:ProductID")[0]).childNodes[0].data
-                            if(version.startswith("11")): version_effective = "Windows Server 2019"
-                            elif(version.startswith("109")): version_effective = "Windows Server 2016"
-                            elif(version.startswith("108")): version_effective = "Windows Server 2016"
-                            elif(version.startswith("107")): version_effective = "Windows Server 2016"
-                            elif(version.startswith("106")): version_effective = "Windows Server 2016"
-                            elif(version.startswith("105")): version_effective = "Windows Server 2016"
-                            elif(version.startswith("104")): version_effective = "Windows Server 2012 R2"
-                            elif(version.startswith("103")): version_effective = "Windows Server 2012"
-                            elif(version.startswith("100")): version_effective = "Windows Server 2008 R2"
-                            elif(version.startswith("9") or version.startswith("102")): version_effective = "Windows Server 2008"
-                            else:version_effective = False
+                            version_effective = False
+                            for pids in product_ids:
+                                if version.startswith(pids["id"][:-3]):
+                                    version_effective = pids["os"]
                             if(version_effective):
                                 if kb:
                                     el = {"CVE": cve, "Title": cve_title, "Patch": kb, "OS": version_effective}

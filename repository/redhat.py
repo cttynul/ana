@@ -13,5 +13,5 @@ def get_rhsa_from_cve(cve):
     for a in affecteds:
         rhsa = a.getElementsByTagName("Advisory")[0].childNodes[0].data
         os = a.getElementsByTagName("ProductName")[0].childNodes[0].data
-        result.append({"CVE": cve, "Title": cve_title, "Patch":rhsa, "OS": os})
+        result.append({"CVE": cve, "Title": cve_title.replace(cve, "").strip(), "Patch":rhsa, "OS": os})
     return result

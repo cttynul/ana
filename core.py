@@ -71,7 +71,7 @@ def automagically(cve_input_xls):
             else:
                 print(i["CVE"].strip() + " may not be an OS related vulnerability.")
         else:
-            print(i["OS"].strip() + " is not currently suppoted. Or report for " + i["CVE"].strip() + " may already been created")
+            print("Report for " + i["CVE"].strip() + " may already been created")
     #print(result)
 
 
