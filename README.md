@@ -50,33 +50,33 @@ $ python ./main.py Input-CVE.xlsx
 2   10.1.3.4  webserver.my.lan  Windows 2012 R2  CVE-2021-42284        7.1
 3   10.2.0.3       mock.my.lan        Red Hat 7  CVE-2019-14850        2.6
 4  10.2.0.10      rhel8.my.lan        Red Hat 8   CVE-2020-3757        9.3
-               CVE                                              Title      Patch                               OS
-0   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008218              Windows Server 2019
-1   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008212  Windows Server, version 20H2...
-2   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008223              Windows Server 2022
-3   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008215              Windows Server 2022
-4   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008207              Windows Server 2016
-5   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008244  Windows Server 2008 R2 for x...
-6   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008282  Windows Server 2008 R2 for x...
-7   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008263           Windows Server 2012 R2
-8   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008285           Windows Server 2012 R2
-9   CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008274  Windows Server 2008 for 32-b...
-10  CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008271  Windows Server 2008 for 32-b...
-11  CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008277              Windows Server 2012
-12  CVE-2021-43217  Windows Encrypting File System (EFS) Remote Co...  KB5008255              Windows Server 2012
-              CVE                                            Title      Patch                                  OS
-0  CVE-2021-42284  Windows Hyper-V Denial of Service Vulnerability  KB5007206                 Windows Server 2019
-1  CVE-2021-42284  Windows Hyper-V Denial of Service Vulnerability  KB5007186  Windows Server, version 20H2 (S...
-2  CVE-2021-42284  Windows Hyper-V Denial of Service Vulnerability  KB5007205                 Windows Server 2022
-3  CVE-2021-42284  Windows Hyper-V Denial of Service Vulnerability  KB5007215                 Windows Server 2022
-4  CVE-2021-42284  Windows Hyper-V Denial of Service Vulnerability  KB5007192                 Windows Server 2016
-5  CVE-2021-42284  Windows Hyper-V Denial of Service Vulnerability  KB5007247              Windows Server 2012 R2
-6  CVE-2021-42284  Windows Hyper-V Denial of Service Vulnerability  KB5007255              Windows Server 2012 R2
+               CVE                              Title      Patch                               OS
+0   CVE-2021-43217  Windows Encrypting File System...  KB5008218              Windows Server 2019
+1   CVE-2021-43217  Windows Encrypting File System...  KB5008212  Windows Server, version 20H2...
+2   CVE-2021-43217  Windows Encrypting File System...  KB5008223              Windows Server 2022
+3   CVE-2021-43217  Windows Encrypting File System...  KB5008215              Windows Server 2022
+4   CVE-2021-43217  Windows Encrypting File System...  KB5008207              Windows Server 2016
+5   CVE-2021-43217  Windows Encrypting File System...  KB5008244  Windows Server 2008 R2 for x...
+6   CVE-2021-43217  Windows Encrypting File System...  KB5008282  Windows Server 2008 R2 for x...
+7   CVE-2021-43217  Windows Encrypting File System...  KB5008263           Windows Server 2012 R2
+8   CVE-2021-43217  Windows Encrypting File System...  KB5008285           Windows Server 2012 R2
+9   CVE-2021-43217  Windows Encrypting File System...  KB5008274  Windows Server 2008 for 32-b...
+10  CVE-2021-43217  Windows Encrypting File System...  KB5008271  Windows Server 2008 for 32-b...
+11  CVE-2021-43217  Windows Encrypting File System...  KB5008277              Windows Server 2012
+12  CVE-2021-43217  Windows Encrypting File System...  KB5008255              Windows Server 2012
+              CVE                            Title      Patch                                  OS
+0  CVE-2021-42284  Windows Hyper-V Denial of Se...  KB5007206                 Windows Server 2019
+1  CVE-2021-42284  Windows Hyper-V Denial of Se...  KB5007186  Windows Server, version 20H2 (S...
+2  CVE-2021-42284  Windows Hyper-V Denial of Se...  KB5007205                 Windows Server 2022
+3  CVE-2021-42284  Windows Hyper-V Denial of Se...  KB5007215                 Windows Server 2022
+4  CVE-2021-42284  Windows Hyper-V Denial of Se...  KB5007192                 Windows Server 2016
+5  CVE-2021-42284  Windows Hyper-V Denial of Se...  KB5007247              Windows Server 2012 R2
+6  CVE-2021-42284  Windows Hyper-V Denial of Se...  KB5007255              Windows Server 2012 R2
 Report for CVE-2021-42284 may already been created
-              CVE                                              Title           Patch                          OS
-0  CVE-2019-14850  nbdkit: denial of service due to premature ope...  RHSA-2020:1167  Red Hat Enterprise Linux 7
-             CVE                                              Title           Patch                           OS
-0  CVE-2020-3757  flash-plugin: Arbitrary Code Execution vulnera...  RHSA-2020:0513  Red Hat Enterprise Linux...
+              CVE                            Title           Patch                          OS
+0  CVE-2019-14850  nbdkit: denial of service du...  RHSA-2020:1167  Red Hat Enterprise Linux 7
+             CVE                             Title           Patch                          OS
+0  CVE-2020-3757  flash-plugin: Arbitrary Code ...  RHSA-2020:0513  Red Hat Enterprise Linu...
 ```
 
 ## License
